@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+<br />
+	<br />
+	<br />
+	<br />
+<h1 align="center" style="color:red;"> Login Page </h1>
+
+<h:form id="loginForm">
+<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+		<table border="2" align="center" cellspacing="2" cellpadding="2">
+			<tr>
+				<td>Email</td>
+				<td><p:inputText id="nameTxt" value="#{loginBean.email}"  ></p:inputText>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Password</td>
+				<td><p:password id="lastnameTxt" value="#{loginBean.password}" ></p:password></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+				
+				
+				<p:commandButton value="Register" action="#{loginBean.login()}" actionListener="#{loginBean.info()}"></p:commandButton> </td>
+			</tr>
+		</table>
+		
+	</h:form>
+	
+<h4 align="center"><a href="login.xhtml">Login</a><br /><a href="index.xhtml">Register</a><br /><a href="fruit.xhtml">Fruit List</a><br />
+</h4>
+</h:body>
+</html>

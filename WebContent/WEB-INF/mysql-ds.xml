@@ -1,0 +1,20 @@
+
+<datasources>
+	<datasource jndi-name="java:/day8DS" pool-name="day8-pool"
+		enabled="true" use-ccm="false">
+		<connection-url>jdbc:mysql://localhost/fruit?autoReconnect=true
+		</connection-url>
+		<driver>mysql</driver>
+		<security>
+			<user-name>root</user-name>
+			<password>61501905</password>
+		</security>
+		
+		<pool>
+			<min-pool-size>2</min-pool-size>
+			<max-pool-size>10</max-pool-size>
+			<prefill>true</prefill>
+		</pool>
+		
+	</datasource>
+</datasources>

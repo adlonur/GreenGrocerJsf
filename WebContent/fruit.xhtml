@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+<br />
+	<br />
+	<br />
+
+<ui:repeat var="register" value="#{loginBean.registers}">
+<h2 align="center" style="color:red;"> Hello #{register.name} </h2>
+<h1 align="center" style="color:black;"> Fruit List </h1>
+</ui:repeat>
+
+
+<ui:repeat var="error" value="#{fruitBean.error}">
+<h2 align="center" style="color:red;"> #{error}</h2>
+<h3 align="center"><a href="login.xhtml">Login</a></h3>
+</ui:repeat>
+
+<ui:repeat var="register" value="#{loginBean.registers}">
+<h:form id="registerForm">
+	
+		<table border="2" align="center" cellspacing="2" cellpadding="2">
+			<tr>
+			<th>Fruit Name</th>
+			<th>Price</th>
+			<th>Stock</th>
+			</tr>
+			<ui:repeat var="fruit" value="#{fruitBean.fruits}">
+			<tr>
+				<td>#{fruit.fruitname}</td>
+				<td>#{fruit.price}</td>
+				<td>#{fruit.stok}</td>
+			</tr>
+</ui:repeat>
+
+		</table>
+		
+		
+	</h:form>
+</ui:repeat>
+</h:body>
+</html>

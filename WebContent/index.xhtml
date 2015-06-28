@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+<br />
+	<br />
+	<br />
+	<br />
+<h1 align="center" style="color:red;"> Registration Page </h1>
+<br />
+<h:form id="registerForm">
+		<table border="2" align="center" cellspacing="2" cellpadding="2">
+			<tr>
+				<td>Name</td>
+				<td><p:inputText id="nameTxt" value="#{registerBean.register.name}" required="true" requiredMessage="This field is required"></p:inputText>
+				 <p:messages for="nameTxt"  autoUpdate="true" closable="true"  />
+				</td>
+			</tr>
+
+			<tr>
+				<td>Lastname</td>
+				<td><p:inputText id="lastnameTxt" value="#{registerBean.register.lastname}" required="true" requiredMessage="This field is required"></p:inputText>
+				 <p:messages for="lastnameTxt"  autoUpdate="true" closable="true"  />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Birthdate</td>
+				<td> <p:calendar id="birtdateTxt" value="#{registerBean.register.birtdate}" required="true" requiredMessage="This field is required"/>
+				<p:messages for="birtdateTxt"  autoUpdate="true" closable="true"  />
+				</td>
+			</tr>
+
+
+
+			<tr>
+				<td>Email</td>
+				<td><p:inputText id="emailTxt" value="#{registerBean.register.email}" required="true" requiredMessage="This field is required" validatorMessage="Email is not valid">
+				<f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+				</p:inputText>
+				<p:messages for="emailTxt"  autoUpdate="true" closable="true"  />
+				</td>
+			</tr>
+
+			<tr>
+				<td>Password</td>
+				<td><p:password id="passwordTxt" value="#{registerBean.register.password}" required="true" requiredMessage="This field is required" ></p:password>
+				<p:messages for="passwordTxt"  autoUpdate="true" closable="true"   />
+				</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><p:commandButton value="Register" action="#{registerBean.saveRegister()}" ></p:commandButton> </td>
+			</tr>
+		</table>
+		
+	</h:form>
+<h4 align="center"><a href="login.xhtml">Login</a><br /><a href="index.xhtml">Register</a><br /><a href="fruit.xhtml">Fruit List</a><br />
+	</h4>
+
+</h:body>
+</html>
