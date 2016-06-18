@@ -7,7 +7,7 @@
 		<driver>mysql</driver>
 		<security>
 			<user-name>root</user-name>
-			<password>61501905</password>
+			<password>12345</password>
 		</security>
 		
 		<pool>
